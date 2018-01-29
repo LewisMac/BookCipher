@@ -16,6 +16,7 @@ int main()
 	string str;
 	int ints;
 	int codeNumbs[7];
+	char codeLetters[7];
 
 	ifstream numFile;
 	
@@ -47,11 +48,13 @@ int main()
 	}
 
 	while (textFile >> str) {
+
 		for (int i = 0; i < sizeof(codeNumbs)/sizeof(codeNumbs[0]); ++i) {
 			//cout << codeNumbs[i] << endl;
 			if (codeNumbs[i] == count) {
-				cout << codeNumbs[i] << endl;
-				cout << str.at(0) << endl;
+				codeLetters[i] = str.at(0);
+				//cout << codeNumbs[i] << endl;
+				//cout << str.at(0) << endl;
 			}
 		}
 		count = ++count;
@@ -59,15 +62,15 @@ int main()
 
 	textFile.close();
 
-	/*
-	cout << codeNumbs[0] << endl;
-	cout << codeNumbs[1] << endl;
-	cout << codeNumbs[2] << endl;
-	cout << codeNumbs[3] << endl;
-	cout << codeNumbs[4] << endl;
-	cout << codeNumbs[5] << endl;
-	cout << codeNumbs[6] << endl;
-	*/
+	
+	cout << codeLetters[0] << endl;
+	cout << codeLetters[1] << endl;
+	cout << codeLetters[2] << endl;
+	cout << codeLetters[3] << endl;
+	cout << codeLetters[4] << endl;
+	cout << codeLetters[5] << endl;
+	cout << codeLetters[6] << endl;
+	
 
 	return 0;
 }
