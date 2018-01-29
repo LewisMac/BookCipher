@@ -29,12 +29,12 @@ int main()
 	while (numFile >> ints) {
 		codeNumbs[count] = ints;
 		count = ++count;
-		cout << ints << endl;
+		//cout << ints << endl;
 	}
 
 	numFile.close();
 
-	count = 0;
+	count = 1;
 
 
 	ifstream textFile;
@@ -47,15 +47,18 @@ int main()
 	}
 
 	while (textFile >> str) {
-		count = ++count;
-		if (count == exampleNumToFind) {
-			cout << str.at(0) << endl;
+		for (int i = 0; i < sizeof(codeNumbs)/sizeof(codeNumbs[0]); ++i) {
+			//cout << codeNumbs[i] << endl;
+			if (codeNumbs[i] == count) {
+				cout << str.at(0) << endl;
+			}
 		}
+		count = ++count;
 	}
 
 	textFile.close();
 
-	cout << codeNumbs[3] << endl;
+	//cout << codeNumbs[3] << endl;
 
 	return 0;
 }
