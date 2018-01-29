@@ -13,15 +13,25 @@ int main()
 {
 	int count = 0;
 	int exampleNumToFind = 12;
+	string str;
 
 	ifstream inFile;
 
-	infile.open("test.txt");
+	inFile.open("test.txt");
 	if (!inFile) {
 		cout << "Unable to open file";
 		exit(1);
 		//will terminate process with error
 	}
+
+	while (inFile >> str) {
+		count = ++count;
+		if (count == exampleNumToFind) {
+			cout << str.at(0) << endl;
+		}
+	}
+
+	inFile.close();
 
 	return 0;
 }
