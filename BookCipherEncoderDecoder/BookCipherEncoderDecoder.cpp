@@ -14,6 +14,8 @@ int main()
 	int count = 0;
 	int exampleNumToFind = 12;
 	string str;
+	int ints;
+	int codeNumbs[5];
 
 	ifstream numFile;
 	
@@ -24,7 +26,15 @@ int main()
 		//will terminate process with error
 	}
 
+	while (numFile >> ints) {
+		codeNumbs[count] = ints;
+		count = ++count;
+		cout << ints << endl;
+	}
+
 	numFile.close();
+
+	count = 0;
 
 
 	ifstream textFile;
@@ -44,6 +54,8 @@ int main()
 	}
 
 	textFile.close();
+
+	cout << codeNumbs[3] << endl;
 
 	return 0;
 }
