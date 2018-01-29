@@ -15,6 +15,18 @@ int main()
 	int exampleNumToFind = 12;
 	string str;
 
+	ifstream numFile;
+	
+	numFile.open("numTest.txt");
+	if (!numFile) {
+		cout << "Unable to open number file";
+		exit(1);
+		//will terminate process with error
+	}
+
+	numFile.close();
+
+
 	ifstream textFile;
 
 	textFile.open("test.txt");
